@@ -1,6 +1,5 @@
-require('file-loader?name=[name].[ext]!./index.html');
 import ReactDOM from 'react-dom';
 import React from 'react';
-import App from './components/App';
+import App from './components/App.jsx';
 
 ReactDOM.render(<App />, document.getElementById('app'));

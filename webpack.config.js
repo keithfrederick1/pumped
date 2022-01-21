@@ -1,12 +1,18 @@
 const path = require('path');
-//Need to add a watch option to continue to compile files as we build out the app.
+const srcDir = path.resolve(__dirname, 'client', 'src');
+const distDir = path.resolve(__dirname, 'client', 'dist');
+
 module.exports = {
-  output: {
-    path: path.join(__dirname, '/dist'),
-    filename: 'index.bundle.js',
+  mode: 'development',
+  watch: true,
+  devtool: 'eval',
+  stats: {
+    excludeModules: /node_modules/,
   },
-  devServer: {
-    port: 8081,
+  entry: path.resolve(srcDir, 'index.jsx'),
+  output: {
+    path: distDir,
+    filename: 'bundle.js',
   },
   module: {
     rules: [
@@ -16,10 +22,6 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         },
-      },
-      {
-        test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
     ],
   },
