@@ -1,6 +1,6 @@
 const { DataTypes } = require('sequelize');
+const db = require('..');
 
-const { db } = require('..'); //<-- defaults to index.js as the only other file in folder.
 //define a table.
 const WorkoutPlan = db.define(
   'WorkoutPlan',
@@ -10,14 +10,10 @@ const WorkoutPlan = db.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // workouts: {
-    //   type: DataTypes.ENUM,
-    //   allowNull: false,
-    // },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-    }
+    },
   },
   {
     // Other model options go here if needed.
@@ -26,6 +22,12 @@ const WorkoutPlan = db.define(
 
 // Sync all models that are not
 // already in the database.
-db.sync();
+WorkoutPlan.sync({ alter: true })
+  .then(() => {
+    console.log('WorkoutPlan table synced');
+  })
+  .catch((err) => {
+    console.error(err);
+  });
 
-module.exports = {WorkoutPlan}
+module.exports = WorkoutPlan;
