@@ -1,12 +1,8 @@
 const { DataTypes } = require('sequelize');
 const db = require('../index');
 
-const { WorkoutPlan } = require('./workoutPlan');
-console.log(db, 11111);
-
 //define a table.
 
-// console.log(db)
 const User = db.define(
   'User',
   {
@@ -34,11 +30,6 @@ const User = db.define(
     // Other model options go here if needed.
   }
 );
-// console.log(User, 22222);
-
-//Creating associations between tables requires using the A.hasOne(B), A.belongsTo(B), A.hasMany(B), and A.belongsToMany(B, { through 'C'}).
-
-// User.hasMany();
 
 // // Sync all models that are not
 // // already in the database.
@@ -54,4 +45,4 @@ User.sync({ alter: true })
     console.error(err);
   });
 
-module.exports = { User };
+module.exports = User;

@@ -38,4 +38,4 @@ Workout.sync({ alter: true })
     console.error(err);
   });
 
-module.exports = { Workout };
+module.exports = Workout;
