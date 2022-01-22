@@ -1,7 +1,7 @@
 const path = require('path');
-const {User} = require('./db/models/user');
-const {Workout} = require('./db/models/workout');
-const {WorkoutPlan} = require('./db/models/workoutPlan');
+// const {User} = require('./db/models/user');
+// const {Workout} = require('./db/models/workout');
+// const {WorkoutPlan} = require('./db/models/workoutPlan');
 const http = require('http');
 const express = require('express');
 const clientPATH = path.resolve(__dirname, '..', 'client', 'dist');
