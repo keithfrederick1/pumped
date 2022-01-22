@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const db = require('..');
+const db = require('../index');
 
 //define a table.
 const UserLog = db.define(
@@ -18,12 +18,12 @@ const UserLog = db.define(
 
 // Sync all models that are not
 // already in the database.
-UserLog.sync({ alter: true })
-  .then(() => {
-    console.log('UserLog table synced');
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+// UserLog.sync({ alter: true })
+//   .then(() => {
+//     console.log('UserLog table synced');
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//   });
 
 module.exports = UserLog;

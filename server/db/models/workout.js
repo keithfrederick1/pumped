@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const db = require('..');
+const db = require('../index');
 
 //define a table.
 const Workout = db.define(
@@ -30,12 +30,12 @@ const Workout = db.define(
 
 // Sync all models that are not
 // already in the database.
-Workout.sync({ alter: true })
-  .then(() => {
-    console.log('Workout table synced');
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+// Workout.sync({ alter: true })
+//   .then(() => {
+//     console.log('Workout table synced');
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//   });
 
 module.exports = Workout;

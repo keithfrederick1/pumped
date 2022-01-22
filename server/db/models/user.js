@@ -21,10 +21,6 @@ const User = db.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    log: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
   },
   {
     // Other model options go here if needed.
@@ -37,12 +33,12 @@ const User = db.define(
 or { alter: true } which will not drop the table before updating it. These 
 options are not limited to individual tables and can be applied to an entire 
 sequelize instance. */
-User.sync({ alter: true })
-  .then(() => {
-    console.log('User table synced');
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+// User.sync({ alter: true })
+//   .then(() => {
+//     console.log('User table synced');
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//   });
 
 module.exports = User;

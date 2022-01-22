@@ -7,9 +7,6 @@
  */
 
 const { Sequelize } = require('sequelize');
-// const { User } = require('./models/user.js')
-// const { Workout } = require('./models/workout.js')
-// const { WorkoutPlan } = require('./models/workoutPlan.js')
 
 /*Here we are making a connection to a database called pumpdb. We capture that connection in 
 a variable that we can later use to define tables. */

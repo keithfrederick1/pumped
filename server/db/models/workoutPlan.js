@@ -9,10 +9,6 @@ const WorkoutPlan = db.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    user_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
   },
   {
     // Other model options go here if needed.
@@ -21,12 +17,12 @@ const WorkoutPlan = db.define(
 
 // Sync all models that are not
 // already in the database.
-WorkoutPlan.sync({ alter: true })
-  .then(() => {
-    console.log('WorkoutPlan table synced');
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+// WorkoutPlan.sync({ alter: true })
+//   .then(() => {
+//     console.log('WorkoutPlan table synced');
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//   });
 
 module.exports = WorkoutPlan;
