@@ -18,7 +18,7 @@ const WorkoutComponent = () => {
 
   return (
     <div>
-      <Button variant="primary" >
+      <Button variant="info" >
       {/* onClick={handleShow}> */}
           See More
         </Button>
@@ -30,11 +30,11 @@ const WorkoutComponent = () => {
           </Modal.Header>
     <Modal.Body>Workout Description</Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary">
+            <Button variant="ouline-info">
             {/*  onClick={handleClose}> */}
               Close
             </Button>
-            <Button variant="primary" >
+            <Button variant="ouline-info" >
             {/* onClick={handleClose}> */}
               Add to Workout Plan
             </Button>
