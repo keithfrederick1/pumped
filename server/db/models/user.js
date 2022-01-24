@@ -1,13 +1,14 @@
 const { DataTypes } = require('sequelize');
 const db = require('../index');
 
-//define a table.
+// define a table.
 
 const User = db.define(
   'User',
   {
     // Model attributes are defined here.
-    //Primary key
+    // Primary key
+
     user_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -15,7 +16,7 @@ const User = db.define(
     },
     username: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     password: {
       type: DataTypes.STRING,
@@ -24,14 +25,14 @@ const User = db.define(
   },
   {
     // Other model options go here if needed.
-  }
+  },
 );
 
 // // Sync all models that are not
 // // already in the database.
-/* if table needs to be updated, add a options object to sync { force: true} 
-or { alter: true } which will not drop the table before updating it. These 
-options are not limited to individual tables and can be applied to an entire 
+/* if table needs to be updated, add a options object to sync { force: true}
+or { alter: true } which will not drop the table before updating it. These
+options are not limited to individual tables and can be applied to an entire
 sequelize instance. */
 // User.sync({ alter: true })
 //   .then(() => {

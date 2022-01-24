@@ -1,7 +1,8 @@
 const { DataTypes } = require('sequelize');
 const db = require('../index');
 
-//define a table.
+// define a table.
+
 const UserLog = db.define(
   'UserLog',
   {
@@ -13,7 +14,7 @@ const UserLog = db.define(
   },
   {
     // Other model options go here if needed.
-  }
+  },
 );
 
 // Sync all models that are not
