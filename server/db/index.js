@@ -8,15 +8,14 @@
 
 const { Sequelize } = require('sequelize');
 
-/*Here we are making a connection to a database called pumpdb. We capture that connection in 
+/* Here we are making a connection to a database called pumpdb. We capture that connection in
 a variable that we can later use to define tables. */
 const db = new Sequelize('pumpdb', 'root', '', {
-  host: 'localhost',
-  port: 3306,
   dialect: 'mysql',
 });
 
-//This simply authenticates our connection. We don't need it after successfully establishing a connection.
+// This simply authenticates our connection. We don't need it
+// after successfully establishing a connection.
 // try {
 //   sequelize.authenticate().then(() => {
 //     console.log('Connection has been established successfully.');

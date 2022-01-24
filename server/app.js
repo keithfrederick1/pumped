@@ -1,19 +1,13 @@
+// Using express to create app functionality and routing
 const express = require('express');
+const { pumpedRouter } = require('./api/routes');
+
 const app = express();
+// use api/router as the base route
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use('/api/router', pumpedRouter);
+
 app.set('port, 3000');
 
-// app.post('/signup', function(req, res) {
-//   User.create({
-//     username: req.body,
-//   })
-//   .then(() => {
-//     console.log('created username')
-//     res.sendStatus(201);
-//   })
-//   .catch((err) =>  {
-//     console.error(err);
-//     res.sendStatus(500);
-//   })
-// }
-// )
+module.exports = app;

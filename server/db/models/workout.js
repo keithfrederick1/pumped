@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const db = require('../index');
 
-//define a table.
+// define a table.
 const Workout = db.define(
   'Workout',
   {
@@ -25,7 +25,7 @@ const Workout = db.define(
   },
   {
     // Other model options go here if needed.
-  }
+  },
 );
 
 // Sync all models that are not
