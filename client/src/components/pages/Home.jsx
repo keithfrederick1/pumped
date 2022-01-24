@@ -1,15 +1,14 @@
-import React from 'react'
-
+import React from 'react';
+import Search from '../Search.jsx';
+import Categories from '../Categories/Categories.jsx';
+import AppNavbar from '../Navbar/Navbar.jsx';
 
 const Home = () => {
   return (
-    <div style={{
-      display: 'flex',
-     justifyContent: 'center',
-      alignItems: 'center', 
-      height: '90vh'
-      }}>
-      <h1>Home</h1> 
+    <div>
+      <AppNavbar />
+      <Search />
+      <Categories />
     </div>
   )
 };
