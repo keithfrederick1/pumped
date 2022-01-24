@@ -1,8 +1,8 @@
-const workoutPlan = require('../db/models/workoutPlan');
+const WorkoutPlan = require('../db/models/workoutPlan');
 
 const getWorkoutPlan = (req, res) => {
-  workoutPlan.findOne().then(() => {
-
+  WorkoutPlan.findOne().then((data) => {
+    res.send(data);
   }).catch((err) => {
     console.error(err);
   });

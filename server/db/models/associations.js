@@ -25,7 +25,6 @@ Workout.belongsToMany(WorkoutPlan, { through: 'WorkoutPlansWorkouts' });
 
 // Checking each table is a valid table.
 // console.log(User, WorkoutPlan, Workout, UserLog, 10101010);
-
 db.sync({ alter: true })
   .then(() => {
     console.log('All tables synced');
