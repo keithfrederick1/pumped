@@ -3,7 +3,7 @@ import { InputGroup, FormControl, Button } from 'react-bootstrap';
 
 const Search = () => {
   return (
-      <div className="my-jumbotron">
+      <div >
       <div className="button-input">
     <InputGroup className="mb-3 button-input">
     <FormControl
@@ -15,7 +15,7 @@ const Search = () => {
       // //create event listener that uses setsearchInput  to set state to the value they input
       //  onChange={(e) => setsearchInput(e.target.value)}
     />
-    <Button variant="danger" id="workout-search-button">
+    <Button variant="primary" id="workout-search-button">
       Search
     </Button>
   </InputGroup>

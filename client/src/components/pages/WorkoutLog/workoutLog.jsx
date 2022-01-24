@@ -1,6 +1,6 @@
 import React from 'react'
 
-const workoutLog = () => {
+const WorkoutLog = () => {
   return (
     <div>
       <h1>Goals This Week:</h1>
@@ -9,4 +9,4 @@ const workoutLog = () => {
   )
 }
 
-export default workoutLog;
+export default WorkoutLog;

@@ -31,12 +31,30 @@ const Categories = () => {
   <Card style={{ width: '18rem' }}>
     {/* <Card.Img variant="top" src={strMealThumb} /> */}
     <Card.Body>
-      <Card.Title>Legs</Card.Title>
+      <Card.Title>Chest</Card.Title>
     </Card.Body>
   </Card>
-  <Card.Body>
+  <Card style={{ width: '18rem' }}>
+    <Card.Body>
       <Card.Title>Back</Card.Title>
     </Card.Body>
+  </Card>
+  <Card style={{ width: '18rem' }}>
+    <Card.Body>
+      <Card.Title>Quads</Card.Title>
+    </Card.Body>
+  </Card>
+  <Card style={{ width: '18rem' }}>
+    <Card.Body>
+      <Card.Title>Hamstrings</Card.Title>
+    </Card.Body>
+  </Card>
+  <Card style={{ width: '18rem' }}>
+    <Card.Body>
+      <Card.Title>Calves</Card.Title>
+    </Card.Body>
+  </Card>
+    
   </div>
   )
 }
