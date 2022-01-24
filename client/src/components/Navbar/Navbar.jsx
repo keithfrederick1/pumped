@@ -1,31 +1,30 @@
 import React from 'react';
-import { Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink } from './NavbarElements';
+import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 
-function Navbar() {
+function AppNavbar() {
   return (
-    <div>
-      <Nav>
-        <NavLink to="/">
-          <h1>Logo</h1>
-        </NavLink>
-        <Bars />
-        <NavMenu>
-          <NavLink to="/workout-plans" activestyle="true">
-            My Workout Plans
-          </NavLink>
-          <NavLink to="/workout-log" activestyle="true">
-            My Workout Log
-          </NavLink>
-          <NavLink to="/categories" activestyle="true">
-            Categories
-          </NavLink>
-        </NavMenu>
-        {/* <NavBtn>
-          <NavBtnLink to='/workout-plans'></NavBtnLink>
-        </NavBtn> */}
-      </Nav>
-    </div>
+    <Navbar bg="light" expand="lg">
+    <Container>
+      <Navbar.Brand href="#home">Workout Your Way</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="me-auto">
+          <Nav.Link href="#home">Home</Nav.Link>
+          <Nav.Link href="#link">Profile</Nav.Link>
+          <NavDropdown title="Services" id="basic-nav-dropdown">
+            <NavDropdown.Item href="#action/3.1">My Workout Plans</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.2">Workout Log</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.2">Calendar</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Workouts</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="#action/3.4">Create Your Own Workout</NavDropdown.Item>
+          </NavDropdown>
+        </Nav>
+      </Navbar.Collapse>
+    </Container>
+  </Navbar>
   )
 }
 
-export default Navbar;
+export default AppNavbar;
+
