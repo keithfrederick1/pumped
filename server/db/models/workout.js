@@ -22,6 +22,10 @@ const Workout = db.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    category_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
     reps: {
       type: DataTypes.INTEGER,
       allowNull: true,
