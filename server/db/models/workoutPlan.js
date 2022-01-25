@@ -12,7 +12,7 @@ const WorkoutPlan = db.define(
   },
   {
     // Other model options go here if needed.
-  }
+  },
 );
 
 // Sync all models that are not
