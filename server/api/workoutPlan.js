@@ -4,7 +4,7 @@ const getWorkoutPlan = (req, res) => {
   WorkoutPlan.findOne().then((data) => {
     res.send(data);
   }).catch((err) => {
-    console.error(err);
+    console.warn(err);
   });
 };
 

@@ -6,7 +6,7 @@ const signup = (req, res) => {
     .then((data) => {
       res.json(data).sendStatus(201);
     }).catch((err) => {
-      console.error(err);
+      console.warn(err);
       res.sendStatus(500);
     });
 };
@@ -21,24 +21,24 @@ const login = (req, res) => {
   }).then((data) => {
     res.send(data);
   }).catch((err) => {
-    console.error(err);
+    console.warn(err);
   });
 };
 
 const deleteUser = (req, res) => {
-  console.log('we getting here?', 2929292929);
   const { username } = req.params;
 
   User.destroy({
     where: {
       username,
     },
-  }).then(() => {
-    console.log(`User ${username} was deleted`);
+  }).then((data) => {
+    res.send(data);
   }).catch((err) => {
-    console.error(err);
+    console.warn(err);
   });
 };
+
 module.exports = {
   signup, login, deleteUser,
 };
