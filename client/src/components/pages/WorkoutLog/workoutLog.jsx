@@ -4,7 +4,7 @@ import { Form, Row, Col, Button, InputGroup, FormControl } from 'react-bootstrap
 const WorkoutLog = () => {
   return (
     <div>
-      <h1>WorkoutLog</h1>
+      <h2>WorkoutLog</h2>
       <Form>
   <Row className="align-items-center">
     <Col xs="auto">

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Routes } from 'react-router-dom
 import WorkoutLog from './pages/WorkoutLog/workoutLog.jsx';
 import WorkoutComponent from './pages/WorkoutComponent/WorkoutComponent.jsx';
 import Home from './pages/Home.jsx';
+import Profile from './pages/Profile/Profile.jsx';
 
 
 function App()  {
@@ -26,9 +27,10 @@ function App()  {
         </Routes>
           <Home />
           {/* <WorkoutLog /> */}
+          {/* <Profile /> */}
 
       <div>
-          <WorkoutComponent />
+          {/* <WorkoutComponent /> */}
       </div>
     </div>
   
