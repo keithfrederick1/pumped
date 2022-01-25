@@ -22,6 +22,18 @@ const Workout = db.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    reps: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    sets: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    mins: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
   },
   {
     // Other model options go here if needed.
