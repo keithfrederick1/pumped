@@ -9,6 +9,10 @@ const WorkoutPlan = db.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    category: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   },
   {
     // Other model options go here if needed.
