@@ -11,7 +11,7 @@ function App()  {
   return(
   <div>
     
-    <h1>PUMP</h1>
+    <h1>P U M P</h1>
     
         <Routes>
           <Route path='/workout-log' component={WorkoutLog}/>

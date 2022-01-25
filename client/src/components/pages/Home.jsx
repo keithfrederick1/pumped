@@ -36,6 +36,7 @@ const [categories, setCategories] = useState([]);
     <div>
       <AppNavbar />
       <Search />
+        <h2 className='title'>C A T E G O R I E S</h2>
       <Categories categories={categories}/>
     </div>
   )
