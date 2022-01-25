@@ -11,10 +11,7 @@ import "./styles.css";
 const Categories = ({ categories }) => {
   return (
     <div className='category-container'>
-
-      {categories.map((category) => <CategoryCard category={category} />)}
-    
-  
+      {categories.map((category) => <CategoryCard category={category} key={category.id} />)}
   </div>
   )
 }

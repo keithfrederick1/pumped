@@ -1,9 +1,10 @@
 import  React  from 'react';
 import { BrowserRouter as Router, Switch, Route, Routes } from 'react-router-dom';
 import WorkoutLog from './pages/WorkoutLog/workoutLog.jsx';
-import WorkoutComponent from './pages/WorkoutComponent/WorkoutComponent.jsx';
+// import WorkoutComponent from './pages/WorkoutListPage/WorkoutComponent.jsx';
 import Home from './pages/Home.jsx';
 import Profile from './pages/Profile/Profile.jsx';
+import CreateWorkout from './pages/CreateWorkout/CreateWorkout.jsx';
 
 
 function App()  {
@@ -28,6 +29,7 @@ function App()  {
           <Home />
           {/* <WorkoutLog /> */}
           {/* <Profile /> */}
+          {/* <CreateWorkout/> */}
 
       <div>
           {/* <WorkoutComponent /> */}
