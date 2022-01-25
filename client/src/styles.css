@@ -25,3 +25,8 @@ h1 {
   background-color: rgb(7, 138, 164);
 }
 
+.title {
+  color: white;
+  background-color: rgb(7, 138, 164);
+  margin: 0px, 0px, 0px;
+}
