@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { signup, login } = require('./user');
+const { signup, login, deleteUser } = require('./user');
 const { getWorkoutPlan } = require('./workoutPlan');
 const { addWorkout } = require('./workout');
 const { addToUserLog } = require('./userLog');
@@ -17,5 +17,7 @@ pumpedRouter.get('/workoutPlan', getWorkoutPlan);
 pumpedRouter.post('/addWorkout', addWorkout);
 
 pumpedRouter.post('/addToUserLog', addToUserLog);
+
+pumpedRouter.delete('/deleteUser/:username', deleteUser);
 
 module.exports = { pumpedRouter };

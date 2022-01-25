@@ -7,7 +7,7 @@ const UserLog = db.define(
   'UserLog',
   {
     // Model attributes are defined here.
-    description: {
+    text: {
       type: DataTypes.STRING,
       allowNull: true,
     },

@@ -1,6 +1,6 @@
 import React from 'react'
 import CategoryCard from './CategoryCard.jsx';
-import "./styles.css";
+// import "./styles.css";
 
 
 //when the home page loads, you want a category component to be rendered for each category. that consists of an image with a button that links
