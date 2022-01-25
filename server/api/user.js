@@ -25,6 +25,20 @@ const login = (req, res) => {
   });
 };
 
+const deleteUser = (req, res) => {
+  console.log('we getting here?', 2929292929);
+  const { username } = req.params;
+
+  User.destroy({
+    where: {
+      username,
+    },
+  }).then(() => {
+    console.log(`User ${username} was deleted`);
+  }).catch((err) => {
+    console.error(err);
+  });
+};
 module.exports = {
-  signup, login,
+  signup, login, deleteUser,
 };
