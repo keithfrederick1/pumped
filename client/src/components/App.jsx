@@ -25,6 +25,7 @@ function App()  {
           <Route path='/workouts' component={Workouts}/> */}
         </Routes>
           <Home />
+          {/* <WorkoutLog /> */}
 
       <div>
           <WorkoutComponent />

@@ -2,12 +2,15 @@ import React from 'react';
 import Search from '../Search.jsx';
 import Categories from '../Categories/Categories.jsx';
 import AppNavbar from '../Navbar/Navbar.jsx';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 //when home page is rendered, make an axios get req to the api to dynamically render workout categories. youll need a context 
 
 const Home = () => {
+//useState is a react hook that assigns context, its assigned to an array: [itemInState, functonToCallForChangingThatState] = useState([...etc])
+const [categories, setCategories] = useState([]);
+
 
   //use effect is a hook that runs a function once a component is rendered
 
@@ -16,9 +19,12 @@ const Home = () => {
     axios.get('https://wger.de/api/v2/exercisecategory/')
       .then(({ data }) => {
         //the array of category objects is recognized as data.data.results, so I descructured data from response
-        console.log(data.results);
+
+        //console.log(data.results);
+
         // use the response to set state of categories and pass down to categories component
        
+        setCategories(data.results);
         
       })
       .catch((err) => {
@@ -30,7 +36,7 @@ const Home = () => {
     <div>
       <AppNavbar />
       <Search />
-      <Categories />
+      <Categories categories={categories}/>
     </div>
   )
 };
