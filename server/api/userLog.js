@@ -4,7 +4,7 @@ const addToUserLog = (req, res) => {
   UserLog.create(req.body).then((data) => {
     res.json(data).sendStatus(201);
   }).catch((err) => {
-    console.error(err);
+    console.warn(err);
   });
 };
 
