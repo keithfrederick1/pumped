@@ -9,7 +9,7 @@ const User = db.define(
     // Model attributes are defined here.
     // Primary key
 
-    user_id: {
+    _id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,

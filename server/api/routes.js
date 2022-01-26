@@ -2,7 +2,7 @@ const { Router } = require('express');
 const axios = require('axios');
 const { signup, login, deleteUser } = require('./user');
 const { getWorkoutPlan } = require('./workoutPlan');
-const { addWorkout, getWorkoutsByCategory } = require('./workout');
+const { addWorkout } = require('./workout');
 const { addToUserLog } = require('./userLog');
 
 const pumpedRouter = Router();

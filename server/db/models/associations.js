@@ -6,6 +6,9 @@ const User = require('./user');
 const Workout = require('./workout');
 const UserLog = require('./userLog');
 
+/* A user has a 7 day workout calendar. A workout calendar has up to 7
+ workout plans. Workout plans can have a number of individual workouts. */
+
 /* Creating associations between tables requires using the A.hasOne(B),
 A.belongsTo(B), A.hasMany(B), and A.belongsToMany(B, { through 'C'}). */
 
