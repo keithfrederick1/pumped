@@ -28,6 +28,8 @@ const CategoryCard = ({ category })  => {
       })
       
    }
+   
+
 
   return (
     <div className="category-card">
