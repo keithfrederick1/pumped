@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 /*when a user clicks a category on the home page, they should be redirected to a category page with all the workouts from that category listed
 */
@@ -9,37 +10,35 @@ const WorkoutComponent = () => {
 
   //create a context file to render the data  
 
-  // const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
   
-  //   const handleClose = () => setShow(false);
-  //   const handleShow = () => setShow(true);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
   
 
   return (
     <div>
-      <Button variant="info" >
-      {/* onClick={handleShow}> */}
+      <h2>Workout</h2>
+      {/* <Button variant="info" onClick={handleShow}>
           See More
         </Button>
   
-        <Modal >
-        {/* show={show} onHide={handleClose}> */}
+        <Modal
+        show={show} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Workout Name</Modal.Title>
           </Modal.Header>
     <Modal.Body>Workout Description</Modal.Body>
           <Modal.Footer>
-            <Button variant="ouline-info">
-            {/*  onClick={handleClose}> */}
+            <Button variant="ouline-info"onClick={handleClose}>
               Close
             </Button>
-            <Button variant="ouline-info" >
-            {/* onClick={handleClose}> */}
+            <Button variant="ouline-info"onClick={handleClose}>
               Add to Workout Plan
             </Button>
           </Modal.Footer>
-        </Modal>
+        </Modal> */}
     </div>
   )
 }

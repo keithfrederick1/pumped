@@ -12,6 +12,7 @@ function Profile() {
       <th>Username</th>
       <th>Created Workouts</th>
       <th>Workout Plans</th>
+      <th>My Logs</th>
     </tr>
   </thead>
   <tbody>
@@ -19,6 +20,7 @@ function Profile() {
       <td>Keith</td>
       <td>Example</td>
       <td>Punisher</td>
+      <td>today sucked</td>
     </tr>
   </tbody>
 </Table>

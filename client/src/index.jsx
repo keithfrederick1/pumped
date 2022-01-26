@@ -8,4 +8,4 @@ import './styles.css';
 ReactDOM.render(
   <Router>
     <App />
-    </Router>, document.getElementById('app'));
+  </Router>, document.getElementById('app'));

@@ -10,15 +10,39 @@ function AppNavbar() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
-          <Link to="/home">Home</Link>
-          <Link to="/profile">Profile</Link>
+          <Nav.Link>
+          <Link to="/home" style={{ textDecoration: 'none' }}>Home</Link>
+          </Nav.Link>
+          <Nav.Link>
+          <Link to="/profile" style={{ textDecoration: 'none' }}>Profile</Link>
+          </Nav.Link>
           <NavDropdown title="Services" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">My Workout Plans</NavDropdown.Item>
-            <NavDropdown.Item href="/workout-log">Workout Log</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Calendar</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Workouts</NavDropdown.Item>
+
+            <NavDropdown.Item href="#action/3.1">
+              <Nav.Link>
+                <Link to="/workout-plans" style={{ textDecoration: 'none' }}>Workout Plans</Link>
+              </Nav.Link>
+            </NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">Create Your Own Workout</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.2">
+              <Nav.Link>
+                <Link to="/workout-log" style={{ textDecoration: 'none' }}>Workout Log</Link>
+              </Nav.Link>
+            </NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="#action/3.3">
+              <Nav.Link>
+                <Link to="/calendar" style={{ textDecoration: 'none' }}>Calendar</Link>
+              </Nav.Link>
+            </NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="#action/3.4">
+              <Nav.Link>
+                <Link to="/workouts" style={{ textDecoration: 'none' }}>Workouts</Link>
+              </Nav.Link>
+            </NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="#action/3.5">Create Your Own Workout</NavDropdown.Item>
           </NavDropdown>
         </Nav>
       </Navbar.Collapse>
