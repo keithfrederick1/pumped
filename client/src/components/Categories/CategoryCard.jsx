@@ -13,14 +13,10 @@ const CategoryCard = ({ category })  => {
 
 //on click of browse category, an axios get request should be made to the backend with the category id as a parameter
 
-
-
-
-
    const handleClick = () => {
      let { id } = category;
 
-    axios.get('https://wger.de/api/v2/exercise/?language=2&limit=100')
+    axios.get('/api/router/workoutsByCategory')
       .then(({ data: { results } }) => {
         
         let filteredExercises = results.filter((obj) => obj.category === id);
