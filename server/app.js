@@ -8,6 +8,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api/router', pumpedRouter);
 
-app.set('port, 3000');
+
 
 module.exports = app;
