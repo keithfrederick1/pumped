@@ -12,9 +12,12 @@ function App()  {
   <div>
     
     <h1>P U M P</h1>
-    
+
+      
+   
         <Routes>
-          <Route path='/workout-log' component={WorkoutLog}/>
+          <Route path='/home' element={<Home />}/>
+          <Route path='/workout-log' element={<WorkoutLog />}/>
           {/* <Route path='/my-workout-plans' component={WorkoutPlan}/>
           <Route path='/calendar' component={Calendar}/>
           <Route path='/workouts' component={Workouts}/>
@@ -28,7 +31,7 @@ function App()  {
           <Home />
           {/* <WorkoutLog /> */}
           {/* <Profile /> */}
-
+         
       <div>
           {/* <WorkoutComponent /> */}
       </div>
