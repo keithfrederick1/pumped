@@ -23,5 +23,7 @@ WorkoutPlan.belongsToMany(Workout, { through: 'WorkoutPlansWorkouts' });
 // A Workout can belong to many WorkoutPlans.
 Workout.belongsToMany(WorkoutPlan, { through: 'WorkoutPlansWorkouts' });
 
-// Checking each table is a valid table.
-// console.log(User, WorkoutPlan, Workout, UserLog, 10101010);
+// sync all tables.
+// UserLog.drop();
+
+db.sync({ alter: true });
