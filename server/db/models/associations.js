@@ -23,7 +23,13 @@ WorkoutPlan.belongsToMany(Workout, { through: 'WorkoutPlansWorkouts' });
 // A Workout can belong to many WorkoutPlans.
 Workout.belongsToMany(WorkoutPlan, { through: 'WorkoutPlansWorkouts' });
 
-// sync all tables.
-// UserLog.drop();
+/* To keep changes to the database current, use the following
+steps depending on needs. be sure to run this file to make the changes. */
 
+// drop database if it exists with DROP DATABASE pumpdb in the mysql shell.
+
+// drop all tables
+// db.drop();
+
+// sync all tables.
 db.sync({ alter: true });
