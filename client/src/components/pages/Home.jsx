@@ -1,7 +1,6 @@
 import React from 'react';
-import Search from '../Search.jsx';
+// import Search from '../Search.jsx';
 import Categories from '../Categories/Categories.jsx';
-import AppNavbar from '../Navbar/Navbar.jsx';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -34,8 +33,8 @@ const Home = () => {
   
   return (
     <div>
-      <AppNavbar />
-      <Search />
+      {/* <Search /> */}
+      <div className="search-image-jumbotron"></div>
         <h2 className='title'>C A T E G O R I E S</h2>
       <Categories categories={categories}/>
     </div>

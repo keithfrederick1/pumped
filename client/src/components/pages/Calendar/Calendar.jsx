@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Calendar() {
+const Calendar = () => {
   return (
     <div>
       <h2>Calendar</h2>

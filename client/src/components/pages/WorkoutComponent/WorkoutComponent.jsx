@@ -15,7 +15,6 @@ const WorkoutComponent = ({item}) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-  console.log(item)
 
   return (
     <div>
