@@ -4,6 +4,7 @@ import { Table, DropdownButton, Dropdown } from 'react-bootstrap';
 /* Each cell in calendar table will have a dropdown menu that
 displays workout plans that can be added to that day. */
 function Calendar() {
+
   return (
     <div>
       <h2>Calendar</h2>
@@ -57,4 +58,5 @@ function Calendar() {
   )
 }
 
+// hi
 export default Calendar

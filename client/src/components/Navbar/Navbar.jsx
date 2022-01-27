@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-function AppNavbar() {
+const AppNavbar = () => {
   return (
     <Navbar bg="light" expand="lg">
     <Container>

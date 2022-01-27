@@ -21,9 +21,16 @@ pumpedRouter.post('/addToUserLog', addToUserLog);
 
 pumpedRouter.delete('/deleteUser/:username', deleteUser);
 
-// This endpoint makes a request to the api for exercise data in english with a limit of 100 items.
+
 pumpedRouter.get('/workoutsByCategory', async (req, res) => {
   const result = await axios.get('https://wger.de/api/v2/exercise/?language=2&limit=100');
+  console.log(result.data.results);
+  res.send(result.data.results);
+});
+
+pumpedRouter.get('/searchWorkouts', async (req, res) => {
+  const result = await axios.get('https://wger.de/api/v2/exercise/?language=2&limit=100');
+  console.log(result.data.results);
   res.send(result.data.results);
 });
 
