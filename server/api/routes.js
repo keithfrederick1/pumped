@@ -22,7 +22,13 @@ pumpedRouter.post('/addToUserLog', addToUserLog);
 pumpedRouter.delete('/deleteUser/:username', deleteUser);
 
 pumpedRouter.get('/workoutsByCategory', async(req, res) => {
-  const result = await axios.get('https://wger.de/api/v2/exercise/?language=2&limit=100')
+  const result = await axios.get('https://wger.de/api/v2/exercise/?language=2&limit=100');
+  console.log(result.data.results);
+  res.send(result.data.results);
+});
+
+pumpedRouter.get('/searchWorkouts', async(req, res) => {
+  const result = await axios.get('https://wger.de/api/v2/exercise/?language=2&limit=100');
   console.log(result.data.results);
   res.send(result.data.results);
 });

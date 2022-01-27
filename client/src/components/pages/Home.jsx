@@ -9,7 +9,7 @@ import axios from 'axios';
 
 const Home = () => {
 //useState is a react hook that assigns context, its assigned to an array: [itemInState, functonToCallForChangingThatState] = useState([...etc])
-const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState([]);
 
 
   //use effect is a hook that runs a function once a component is rendered

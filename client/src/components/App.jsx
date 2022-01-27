@@ -1,5 +1,5 @@
 import  React  from 'react';
-import { Route, Routes, } from 'react-router-dom';
+import { Route, Routes, Redirect,} from 'react-router-dom';
 import WorkoutLog from './pages/WorkoutLog/workoutLog.jsx';
 import WorkoutComponent from './pages/WorkoutComponent/WorkoutComponent.jsx';
 import Home from './pages/Home.jsx';
@@ -16,8 +16,11 @@ function App()  {
     <h1>P U M P</h1>
 
       
-   
+
         <Routes>
+          {/* // trying to redirect no route to home route */}
+          {/* <Route path='/'/>
+            <Redirect to='/home'></Redirect> */}
           <Route path='/home' element={<Home />}/>
           <Route path='/profile' element={<Profile />}/>
           <Route path='/workout-plans' element={<WorkoutPlans />}/>
