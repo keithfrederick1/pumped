@@ -5,7 +5,7 @@ const WorkoutPlan = require('./workoutPlan');
 const User = require('./user');
 const Workout = require('./workout');
 const UserLog = require('./userLog');
-
+const Calendar = require('./calendar');
 /* A user has a 7 day workout calendar. A workout calendar has up to 7
  workout plans. Workout plans can have a number of individual workouts. */
 
@@ -15,9 +15,14 @@ A.belongsTo(B), A.hasMany(B), and A.belongsToMany(B, { through 'C'}). */
 // A User has many workout plans and user logs.
 User.hasMany(WorkoutPlan);
 User.hasMany(UserLog);
+User.hasOne(Calendar);
 
 // A User log belongs to a User.
 UserLog.belongsTo(User);
+
+// A Calendar belongs to a User and has many workout plans.
+Calendar.belongsTo(User);
+Calendar.hasMany(WorkoutPlan);
 
 // A WorkoutPlan belongs to a User and has many Workouts.
 WorkoutPlan.belongsTo(User);
@@ -36,3 +41,7 @@ steps depending on needs. be sure to run this file to make the changes. */
 
 // sync all tables.
 db.sync({ alter: true });
+
+module.exports = {
+  WorkoutPlan, User, UserLog, Workout, Calendar,
+};
