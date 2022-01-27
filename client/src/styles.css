@@ -1,0 +1,32 @@
+.search-image-jumbotron {
+  background-image : linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fHdvcmtvdXR8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 600px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+.button-input {
+  width: 85%;
+  margin-top: 30px;
+}
+h1 {
+  color: rgb(7, 138, 164);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(43, 45, 45);
+}
+.navbar-toggler.collapsed {
+  background-color: rgb(7, 138, 164);
+}
+
+.title {
+  color: white;
+  background-color: rgb(7, 138, 164);
+  margin: 0px, 0px, 0px;
+}

@@ -1,17 +1,15 @@
 const { DataTypes } = require('sequelize');
 const db = require('../index');
 
-const WorkoutPlan = db.define(
-  'WorkoutPlan',
+// define a table.
+
+const UserLog = db.define(
+  'UserLog',
   {
     // Model attributes are defined here.
-    name: {
+    text: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
-    category: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
   },
   {
@@ -21,12 +19,12 @@ const WorkoutPlan = db.define(
 
 // Sync all models that are not
 // already in the database.
-// WorkoutPlan.sync({ alter: true })
+// UserLog.sync({ alter: true })
 //   .then(() => {
-//     console.log('WorkoutPlan table synced');
+//     console.log('UserLog table synced');
 //   })
 //   .catch((err) => {
 //     console.error(err);
 //   });
 
-module.exports = WorkoutPlan;
+module.exports = UserLog;

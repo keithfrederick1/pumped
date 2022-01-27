@@ -1,36 +1,45 @@
 const { DataTypes } = require('sequelize');
-// const sequelize = require('sequelize').Sequelize;
-const { db }  = require('../index'); //<-- defaults to index.js as the only other file in folder.
-//define a table.
+const db = require('../index');
 
-// console.log(db)
-const User = db.define('User', {
+// define a table.
+
+const User = db.define(
+  'User',
+  {
     // Model attributes are defined here.
+    // Primary key
+
     user_id: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      primaryKey: true,
+      autoIncrement: true,
     },
     username: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
-    // workoutPlans: {
-    //   type: DataTypes.ENUM,
-    //   allowNull: true,
-    // },
-    log: {
+    password: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
   },
   {
     // Other model options go here if needed.
-  }
+  },
 );
-
 
 // // Sync all models that are not
 // // already in the database.
-User.sync()
+/* if table needs to be updated, add a options object to sync { force: true}
+or { alter: true } which will not drop the table before updating it. These
+options are not limited to individual tables and can be applied to an entire
+sequelize instance. */
+// User.sync({ alter: true })
+//   .then(() => {
+//     console.log('User table synced');
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//   });
 
-module.exports = {User}
+module.exports = User;
