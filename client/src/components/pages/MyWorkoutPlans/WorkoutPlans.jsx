@@ -7,7 +7,7 @@ import React from 'react'
 //should make a get request to the database for a list ofthe signed in user's workout Plans
 
 //each plan list item should have a see more button that renders a WorkoutPLAN component for each of the workouts in a given plan
-function WorkoutPlans() {
+const WorkoutPlans = () => {
   return (
     <div>
      <h1>Workout Plans</h1> 

@@ -1,8 +1,9 @@
 import  React  from 'react';
-import { Route, Routes, } from 'react-router-dom';
+import { Route, Routes, Navigate,} from 'react-router-dom';
 import WorkoutLog from './pages/WorkoutLog/workoutLog.jsx';
 import WorkoutComponent from './pages/WorkoutComponent/WorkoutComponent.jsx';
 import Home from './pages/Home.jsx';
+import AppNavbar from './Navbar/Navbar.jsx'
 import Profile from './pages/Profile/Profile.jsx';
 import WorkoutPlans from './pages/MyWorkoutPlans/WorkoutPlans.jsx';
 import Workouts from './pages/WorkoutComponent/Workouts.jsx';
@@ -14,10 +15,12 @@ function App()  {
   <div>
     
     <h1>P U M P</h1>
-
+    <AppNavbar />
       
-   
+
         <Routes>
+          {/* // trying to redirect no route to home route */}
+          <Route path='/' element={<Navigate to='/home'/>}/>
           <Route path='/home' element={<Home />}/>
           <Route path='/profile' element={<Profile />}/>
           <Route path='/workout-plans' element={<WorkoutPlans />}/>
@@ -31,7 +34,7 @@ function App()  {
           <Route path='/legs' component={Workouts}/>
           <Route path='/workouts' component={Workouts}/> */}
         </Routes>
-          <Home />
+          {/* <Home /> */}
           {/* <WorkoutLog /> */}
           {/* <Profile /> */}
          

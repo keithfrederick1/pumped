@@ -1,7 +1,6 @@
 import React from 'react';
-import Search from '../Search.jsx';
+// import Search from '../Search.jsx';
 import Categories from '../Categories/Categories.jsx';
-import AppNavbar from '../Navbar/Navbar.jsx';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -9,7 +8,7 @@ import axios from 'axios';
 
 const Home = () => {
 //useState is a react hook that assigns context, its assigned to an array: [itemInState, functonToCallForChangingThatState] = useState([...etc])
-const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState([]);
 
 
   //use effect is a hook that runs a function once a component is rendered
@@ -34,8 +33,8 @@ const [categories, setCategories] = useState([]);
   
   return (
     <div>
-      <AppNavbar />
-      <Search />
+      {/* <Search /> */}
+      <div className="search-image-jumbotron"></div>
         <h2 className='title'>C A T E G O R I E S</h2>
       <Categories categories={categories}/>
     </div>
