@@ -26,10 +26,3 @@ server.listen(PORT, () => {
   console.log(`listening on http://127.0.0.1:${PORT}`);
 });
 
-// db.sync({ alter: true })
-//   .then(() => {
-//     console.log('All tables synced');
-//   })
-//   .catch((err) => {
-//     console.error(err);
-//   });
