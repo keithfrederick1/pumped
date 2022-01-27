@@ -3,57 +3,38 @@ import { Table, DropdownButton, Dropdown } from 'react-bootstrap';
 // import WorkoutPlans from '../MyWorkoutPlans/WorkoutPlans'
 /* Each cell in calendar table will have a dropdown menu that
 displays workout plans that can be added to that day. */
-function Calendar() {
+
+const Calendar = () => {
+  const week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  const dropdownOptions = [
+    { href: '#/action-1', description: 'I AM SPARTA'},
+    { href: '#/action-2', description: 'Leg day'},
+    { href: '#/action-3', description: 'Core day'},
+  ]
   return (
-    <div>
+  <div>
       <h2>Calendar</h2>
       <Table striped bordered hover>
-      <thead>
-    <tr>
-      <th>Monday</th>
-      <th>Tuesday</th>
-      <th>Wednesday</th>
-      <th>Thursday</th>
-      <th>Friday</th>
-      <th>Saturday</th>
-      <th>Sunday</th>
-    </tr>
-  </thead>
+    <thead>
+      <tr>
+        {week.map((day, i) =>
+        <th key={day + i}>{day}</th>)}
+      </tr>
+    </thead>
   <tbody>
     <tr>
-      <td><DropdownButton id="dropdown-basic-button" title="Dropdown button" size="sm" variant="info"
+      {week.map((day) => {
+        return (<td>
+        <DropdownButton id="dropdown-basic-button" title="Dropdown button" size="sm" variant="info"
         title="Workout Plan">
-  <Dropdown.Item href="#/action-1">I AM SPARTA!</Dropdown.Item>
-</DropdownButton></td>
-      <td><DropdownButton id="dropdown-basic-button" title="Dropdown button" size="sm" variant="info"
-        title="Workout Plan">
-  <Dropdown.Item href="#/action-3">Smoke on the Squatter</Dropdown.Item>
-</DropdownButton></td>
-      <td><DropdownButton id="dropdown-basic-button" title="Dropdown button" size="sm" variant="info"
-        title="Workout Plan">
-  <Dropdown.Item href="#/action-1">I AM SPARTA!</Dropdown.Item>
-</DropdownButton></td>
-      <td><DropdownButton id="dropdown-basic-button" title="Dropdown button" size="sm" variant="info"
-        title="Workout Plan">
-  <Dropdown.Item href="#/action-2">America's Ass</Dropdown.Item>
-</DropdownButton></td>
-      <td><DropdownButton id="dropdown-basic-button" title="Dropdown button" size="sm" variant="info"
-        title="Workout Plan">
-  <Dropdown.Item href="#/action-3">Smoke on the Squatter</Dropdown.Item>
-</DropdownButton></td>
-      <td><DropdownButton id="dropdown-basic-button" title="Dropdown button" size="sm" variant="info"
-        title="Workout Plan">
-  <Dropdown.Item href="#/action-3">Smoke on the Squatter</Dropdown.Item>
-</DropdownButton></td>
-      <td><DropdownButton id="dropdown-basic-button" title="Dropdown button" size="sm" variant="info"
-        title="Workout Plan">
-  <Dropdown.Item href="#/action-1">I AM SPARTA!</Dropdown.Item>
-</DropdownButton></td>
-
+        {dropdownOptions.map((options) => <Dropdown.Item href={options.href}>{options.description}</Dropdown.Item>)}
+        </DropdownButton>
+      </td>)
+      })}
     </tr>
   </tbody>
   </Table>
-    </div>
+  </div>
   )
 }
 
