@@ -8,16 +8,15 @@ import Profile from './pages/Profile/Profile.jsx';
 import WorkoutPlans from './pages/MyWorkoutPlans/WorkoutPlans.jsx';
 import Workouts from './pages/WorkoutComponent/Workouts.jsx';
 import Calendar from './pages/Calendar/Calendar.jsx';
+import LoginSignUp from './pages/Login/Signup.jsx/LoginSignUp.jsx';
 import CreateWorkout from './pages/CreateWorkout/CreateWorkout.jsx';
 
-function App()  {
-  
-  return(
+const App = () => (
   <div>
-    
     <h1>P U M P</h1>
     <AppNavbar />
        <Routes>
+          <Route path='/login' element={<LoginSignUp />}/>
           {/* // trying to redirect no route to home route */}
           <Route path='/' element={<Navigate to='/home'/>}/>
           <Route path='/home' element={<Home />}/>
@@ -29,7 +28,5 @@ function App()  {
           <Route path='/create-workout' element={<CreateWorkout />}/> 
         </Routes>
     </div>
-  
 );
-        };
 export default App;

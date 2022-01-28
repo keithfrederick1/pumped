@@ -9,9 +9,12 @@ const pumpedRouter = Router();
 
 /* routes pointing to functions that interface with the tables
  in the db. */
-pumpedRouter.post('/signup', signup);
 
-pumpedRouter.get('/login', login);
+ //--------change these------
+// pumpedRouter.post('/signup', signup);
+
+// pumpedRouter.get('/login', login);
+//---------------
 
 pumpedRouter.get('/workoutPlan', getWorkoutPlan);
 

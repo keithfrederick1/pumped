@@ -20,8 +20,12 @@ const User = db.define(
     },
     password: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
+    googleId: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
   },
   {
     // Other model options go here if needed.

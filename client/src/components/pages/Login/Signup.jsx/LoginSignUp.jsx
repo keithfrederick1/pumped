@@ -5,7 +5,8 @@ import { Form, Button} from 'react-bootstrap';
 const  LoginSignUp = () => {
 
   const googleAuth = () => {
-    //event handler for click of sign in with google , shoudl redirect to passport- oauth page
+    //event handler for click of sign in with google , should redirect to passport- oauth page
+    
   }
 
   return (
@@ -28,7 +29,7 @@ const  LoginSignUp = () => {
   </Form.Group>
   <Button variant="outline-info" type="submit">
   </Button>
-  <Button variant="info" type="submit">
+  <Button variant="info" type="submit" onClick={googleAuth}>
     Sign-in with Google
   </Button>
 </Form>
