@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
+
 /*when a user clicks a category on the home page, they should be redirected to a category page with all the workouts from that category listed
 */
 const WorkoutComponent = ({item}) => {
@@ -17,11 +18,18 @@ const WorkoutComponent = ({item}) => {
 
 
   return (
-    <div>
+    <div className="card-background">
       <h2>{item.name}</h2>
+      <img  src="../images/Logo.png" style={
+        { height: '18rem',
+          borderRadius: '30px'
+        }
+      } alt="logo"/>
+      <div className="card-button"> 
       <Button variant="info" onClick={handleShow}>
           See More
         </Button>
+      </div>
   
         <Modal
         show={show} onHide={handleClose}>

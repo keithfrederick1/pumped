@@ -8,6 +8,7 @@ import Profile from './pages/Profile/Profile.jsx';
 import WorkoutPlans from './pages/MyWorkoutPlans/WorkoutPlans.jsx';
 import Workouts from './pages/WorkoutComponent/Workouts.jsx';
 import Calendar from './pages/Calendar/Calendar.jsx';
+import CreateWorkout from './pages/CreateWorkout/CreateWorkout.jsx';
 
 function App()  {
   
@@ -16,9 +17,7 @@ function App()  {
     
     <h1>P U M P</h1>
     <AppNavbar />
-      
-
-        <Routes>
+       <Routes>
           {/* // trying to redirect no route to home route */}
           <Route path='/' element={<Navigate to='/home'/>}/>
           <Route path='/home' element={<Home />}/>
@@ -26,21 +25,9 @@ function App()  {
           <Route path='/workout-plans' element={<WorkoutPlans />}/>
           <Route path='/workout-log' element={<WorkoutLog />}/>
           <Route path='/calendar' element={<Calendar />}/>
-          <Route path='/workouts' element={<Workouts />}/>
-            {/*
-          <Route path='/shoulders' component={Workouts}/>
-          <Route path='/abs' component={Workouts}/>
-          <Route path='/arms' component={Workouts}/>
-          <Route path='/legs' component={Workouts}/>
-          <Route path='/workouts' component={Workouts}/> */}
+          <Route path='/workouts' element={<Workouts />}/> 
+          <Route path='/create-workout' element={<CreateWorkout />}/> 
         </Routes>
-          {/* <Home /> */}
-          {/* <WorkoutLog /> */}
-          {/* <Profile /> */}
-         
-      <div>
-          {/* <WorkoutComponent /> */}
-      </div>
     </div>
   
 );

@@ -58,8 +58,9 @@ const Workouts = () => {
           </InputGroup>
         </div>
       </div>
-      {list.map(item => <WorkoutComponent item={item} />)}
-
+      <div>
+        {list.map(item => <WorkoutComponent item={item} />)}
+      </div>
     </div>
   )
 }
