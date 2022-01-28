@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-function AppNavbar() {
+const AppNavbar = () => {
   return (
     <Navbar bg="light" expand="lg">
     <Container>
@@ -42,7 +42,11 @@ function AppNavbar() {
               </Nav.Link>
             </NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.5">Create Your Own Workout</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.5">
+            <Nav.Link>
+                <Link to="/create-workout" style={{ textDecoration: 'none' }}>Create Your Own Workout</Link>
+              </Nav.Link>
+              </NavDropdown.Item>
           </NavDropdown>
         </Nav>
       </Navbar.Collapse>
