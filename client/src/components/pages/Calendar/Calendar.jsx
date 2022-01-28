@@ -1,6 +1,8 @@
 import React from 'react';
-import { useState, useEffect } from 'react'
+import DayPlan from './DayPlan.jsx';
+ import { useState, useEffect } from 'react'
 import { Table, DropdownButton, Dropdown } from 'react-bootstrap';
+
 // import WorkoutPlans from '../MyWorkoutPlans/WorkoutPlans'
 /* Each cell in calendar table will have a dropdown menu that
 displays workout plans that can be added to that day. When clicked, the workout plan 
@@ -8,33 +10,25 @@ is rendered in the next row and clicking that navigates the user to the workout 
 view. */
 
 const Calendar = () => {
-  // const week = [{ day: 'Monday', plan: 'Day Off'}, 
-  // { day: 'Tuesday', plan: 'Day Off'},
-  // { day: 'Wednesday', plan: 'Day Off'},
-  // { day: 'Thursday', plan: 'Day Off'},
-  // { day: 'Friday', plan: 'Day Off'},
-  // { day: 'Saturday', plan: 'Day Off'},
-  // { day: 'Sunday', plan: 'Day Off'}];
+  const week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  const defaultPlan = 'Day Off';
+  const initialState = {'Monday': defaultPlan, 'Tuesday': defaultPlan, 'Wednesday': defaultPlan, 'Thursday': defaultPlan, 'Friday': defaultPlan, 'Saturday': defaultPlan, 'Sunday': defaultPlan};
 
 
   const dropdownOptions = [
-    { href: '#/action-1', plan: 'I AM SPARTA'},
-    { href: '#/action-2', plan: 'Leg day'},
-    { href: '#/action-3', plan: 'Core day'},
+    {id: 0, plan: defaultPlan},
+    {id: 1, plan: 'I AM SPARTA'},
+    {id: 2, plan: 'Leg day'},
+    {id: 3, plan: 'Core day'},
   ]
   // Use state hook to set the workout plan to an element.
-  const [week, setWorkoutPlans] = useState([{ day: 'Monday', plan: 'Day Off'}, 
-  { day: 'Tuesday', plan: 'Day Off'},
-  { day: 'Wednesday', plan: 'Day Off'},
-  { day: 'Thursday', plan: 'Day Off'},
-  { day: 'Friday', plan: 'Day Off'},
-  { day: 'Saturday', plan: 'Day Off'},
-  { day: 'Sunday', plan: 'Day Off'}]);
+  const [workoutPlans, setWorkoutPlans] = useState({...initialState});
 
-  const handleDropdownItemClick = (e, i) => {
-    return setWorkoutPlans(e.target.value)
+  // Using an object as state in react.
+  const handleDropdownItemClick = (id, day) => {
+    const newPlan = {...workoutPlans, [day]: id};
+    return setWorkoutPlans(newPlan);
   };
-
 
   return (
   <div>
@@ -43,7 +37,7 @@ const Calendar = () => {
     <thead>
       <tr>
         {week.map((day, i) =>
-        <th key={day.day + i}>{day.day}</th>)}
+        <th key={day + i}>{day}</th>)}
       </tr>
     </thead>
   <tbody>
@@ -52,16 +46,17 @@ const Calendar = () => {
         return (
         <td>
           <DropdownButton id="dropdown-basic-button" title="Dropdown button" size="sm" variant="info"
-          title="Workout Plan" key={day.day + i}>
-          {dropdownOptions.map((options, idx) => <Dropdown.Item onClick={(idx) => {handleDropdownItemClick(idx)}} href={options.href} key={options + idx}>{options.plan}</Dropdown.Item>)}
+          title="Workout Plan" key={day + i}>
+          {dropdownOptions.map((option) => <Dropdown.Item onClick={() => handleDropdownItemClick(option.plan, day)} key={option.id}>{option.plan}</Dropdown.Item>)}
           </DropdownButton>
         </td>
       )
       })}
     </tr>
     <tr>
-      {week.map((day, i) => (<td>{day.plan}</td>))}
+      {week.map((day, i) => <DayPlan plan={workoutPlans[day]} key={day + i}/>)}
     </tr>
+
   </tbody>
   </Table>
   </div>
