@@ -13,7 +13,10 @@ passport.use(new GoogleStrategy({
   },
   function(accessToken, refreshToken, profile, cb) {
     //use profile id to check if user is regisyteered in db
-    User.findOrCreate({ where: { googleId: profile.id }}), (err, user) => {
+    User.findOrCreate({ where: { 
+      googleId: profile.id,
+      username: profile.displayName,
+    }}), (err, user) => {
       return cb(err, user);
     };
   }

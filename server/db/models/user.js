@@ -20,7 +20,7 @@ const User = db.define(
     },
     password: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     googleId: {
       type: DataTypes.STRING,
