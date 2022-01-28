@@ -1,6 +1,6 @@
 //passport file
 const passport = require('passport');
-const User = require('./db/models/user');
+const User = require('../db/models/user.js');
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 //once this runs, the serializeUser function is called
