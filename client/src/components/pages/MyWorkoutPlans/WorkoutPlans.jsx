@@ -1,4 +1,5 @@
 import React from 'react'
+import { Form, Button } from 'react-bootstrap';
 
 
 //react routing is connected successfully for this component build it out
@@ -10,7 +11,19 @@ import React from 'react'
 const WorkoutPlans = () => {
   return (
     <div>
-     <h1>Workout Plans</h1> 
+     <h2>Make Your Own Workout Plan</h2>
+      <Form>
+  <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+    <Form.Label>Exercise Name</Form.Label>
+    <Form.Control type="email" placeholder="go crazy" />
+  </Form.Group>
+      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+        <Form.Label>Description</Form.Label>
+        <Form.Control as="textarea" rows={3} />
+      </Form.Group>
+    </Form>
+  <Button onClick={handleClick}>Submit</Button>
+
     </div>
   )
 }

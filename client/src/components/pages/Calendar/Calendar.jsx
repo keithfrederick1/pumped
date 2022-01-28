@@ -32,8 +32,8 @@ const Calendar = () => {
 
   return (
   <div>
-      <h2>Calendar</h2>
-      <Table striped bordered hover>
+      <h2>Weekly Plan</h2>
+      <Table striped bordered>
     <thead>
       <tr>
         {week.map((day, i) =>

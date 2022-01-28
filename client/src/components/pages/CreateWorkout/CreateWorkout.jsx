@@ -3,6 +3,7 @@ import { Form, Button } from 'react-bootstrap';
 
 const handleClick = (e) => {
   //send post request to user account for their workouts
+  console.log("this sends a post to workouts table")
 }
 
 //create Workout should be an input field. You should save that input to the users workout log in the database. create a helper to achieve this, and call it on click of submit

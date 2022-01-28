@@ -1,21 +1,25 @@
 import React from 'react';
 import { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
+import { DropdownButton, Dropdown } from 'react-bootstrap';
 
 /*when a user clicks a category on the home page, they should be redirected to a category page with all the workouts from that category listed
 */
-const WorkoutComponent = ({item}) => {
+const WorkoutComponent = (props) => {
+  const { item } = props
   //use hooks for state management, take the props you need for workout name, description and an input are for intensity
 
    //use hooks for state management, take the props you need for workout name, description and an input are for intensity
 
   //create a context file to render the data  
-
+  const plans = ['kangaroo', 'nah thats my buttocks', 'I am perkisizing'];
   const [show, setShow] = useState(false);
   
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const addWorkoutToPlan = () => {
+    console.log('this is fine....')
+  }
 
   return (
     <div className="card-background">
@@ -34,16 +38,18 @@ const WorkoutComponent = ({item}) => {
         <Modal
         show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>{item.name}</Modal.Title>
+            <Modal.Title key={item.id}>{item.name}</Modal.Title>
           </Modal.Header>
     <Modal.Body>{item.description.slice(3,-4)}</Modal.Body>
           <Modal.Footer>
-            <Button variant="ouline-info"onClick={handleClose}>
+            <Button variant="outline-info"onClick={handleClose}>
               Close
             </Button>
-            <Button variant="ouline-info"onClick={handleClose}>
-              Add to Workout Plan
-            </Button>
+            <DropdownButton variant="outline-info" title="Add to Workout Plan">
+              {plans.map((plan, i) => {
+                <Dropdown.Item onClick={addWorkoutToPlan} key={plan + i}>{plan.name}</Dropdown.Item>
+              })}
+            </DropdownButton>
           </Modal.Footer>
         </Modal>
     </div>
