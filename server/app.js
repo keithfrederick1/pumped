@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/router', pumpedRouter);
 
 
-//cookies. once session is verified user is sent to /good
+//cookies. once session is verified user is sent home
 app.use(cookieSession({
   name: 'session',
   keys: ['key1', 'key2']

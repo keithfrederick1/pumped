@@ -10,24 +10,30 @@ passport.use(new GoogleStrategy({
     clientID: '972420547961-pclvv9hksu2c92cicutu0nvomioomaon.apps.googleusercontent.com',
     clientSecret: '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',
     callbackURL: "http://localhost:3000/google/callback"
-  },
-  function(accessToken, refreshToken, profile, cb) {
-    //use profile id to check if user is regisyteered in db
-    User.findOrCreate({ where: { 
-      googleId: profile.id,
-      username: profile.displayName,
-    }}), (err, user) => {
-      return cb(err, user);
-    };
+  },(accessToken, refreshToken, profile, done) => {
+    //use profile id to check if user is registered in db
+    User.findOrCreate({ where: 
+      { 
+        googleId: profile.id,
+        username: profile.displayName,
+      }
+    }).then(user => done(null, user))
+    .catch(err => console.error(err))
   }
 ));
-//thiss takes users id to ensure cookie is small and passes it to ession
+//this takes users id to ensure cookie is small and passes it to session
 passport.serializeUser((user, done) => {
-  done(null, user.id);
+  console.log(user[0].dataValues._id);
+  done(null, user[0].dataValues.googleId);
 });
 
-passport.deserializeUser((user, done) => {
-  User.findById(id, (err, user) => {
+
+passport.deserializeUser((googleId, done) => {
+  console.log(googleId);
+  User.findOne({ where: {googleId}})
+   .then((user) => {
+    console.log('success');
     done(null, user);
-  });
+  })
+  .catch(err => console.error(err));
 });
