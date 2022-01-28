@@ -7,6 +7,7 @@ import Profile from './pages/Profile/Profile.jsx';
 import WorkoutPlans from './pages/MyWorkoutPlans/WorkoutPlans.jsx';
 import Workouts from './pages/WorkoutComponent/Workouts.jsx';
 import Calendar from './pages/Calendar/Calendar.jsx';
+import LoginSignUp from './pages/Login/Signup.jsx/LoginSignUp.jsx';
 
 function App()  {
   
@@ -18,6 +19,7 @@ function App()  {
       
    
         <Routes>
+          <Route path='/login' element={<LoginSignUp />}/>
           <Route path='/home' element={<Home />}/>
           <Route path='/profile' element={<Profile />}/>
           <Route path='/workout-plans' element={<WorkoutPlans />}/>

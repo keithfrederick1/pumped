@@ -22,6 +22,10 @@ const User = db.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    googleId: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
   },
   {
     // Other model options go here if needed.

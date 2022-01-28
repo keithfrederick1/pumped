@@ -34,3 +34,5 @@ server.listen(PORT, () => {
 //   .catch((err) => {
 //     console.error(err);
 //   });
+
+module.exports = clientPATH;
