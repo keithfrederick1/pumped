@@ -10,6 +10,7 @@ import Workouts from './pages/WorkoutComponent/Workouts.jsx';
 import Calendar from './pages/Calendar/Calendar.jsx';
 import LoginSignUp from './pages/Login/Signup.jsx/LoginSignUp.jsx';
 import CreateWorkout from './pages/CreateWorkout/CreateWorkout.jsx';
+import Signin from './pages/Profile/Signin.jsx';
 
 const App = () => (
   <div>
@@ -26,6 +27,7 @@ const App = () => (
           <Route path='/calendar' element={<Calendar />}/>
           <Route path='/workouts' element={<Workouts />}/> 
           <Route path='/create-workout' element={<CreateWorkout />}/> 
+          <Route path='/signin' element={<Signin />}/>
         </Routes>
     </div>
 );

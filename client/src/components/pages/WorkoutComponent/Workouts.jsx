@@ -12,11 +12,9 @@ const Workouts = () => {
 
 
   useEffect(() => {
-    console.log('fuck');
     axios.get('https://wger.de/api/v2/exercise/?language=2&limit=100')
       .then(({ data }) => {
         const { results } = data;
-        console.log(results);
         setList(results);
       })
   }, []);
@@ -32,13 +30,11 @@ const Workouts = () => {
     //console.log('clicked');
     axios.get('https://wger.de/api/v2/exercise/?language=2&limit=100')
       .then(({ data }) => {
-        //console.log(data);
         const { results } = data;
         let filteredExercises = results.filter((obj) => {
           return obj.name.toUpperCase().includes(input.toUpperCase())
         })
         setList(filteredExercises);
-        console.log(list);
       })
 
   }
