@@ -1,15 +1,16 @@
 import React from 'react';
 // import Search from '../Search.jsx';
 import Categories from '../Categories/Categories.jsx';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
-
+import {  CatContext} from '../../Context/CatContext.jsx';
+import ExerciseByCat from '../Categories/ExerciseByCat.jsx';
 //when home page is rendered, make an axios get req to the api to dynamically render workout categories. youll need a context 
 
 const Home = () => {
 //useState is a react hook that assigns context, its assigned to an array: [itemInState, functonToCallForChangingThatState] = useState([...etc])
   const [categories, setCategories] = useState([]);
-
+  const { list, click } = useContext(CatContext);
 
   //use effect is a hook that runs a function once a component is rendered
 
@@ -30,14 +31,21 @@ const Home = () => {
         console.error(err);
       });
     }, []);
-  
+  console.log(list);
+
   return (
+    
     <div>
       {/* <Search /> */}
       <div className="search-image-jumbotron"></div>
-        <h2 className='title'>C A T E G O R I E S</h2>
+      {click ?  <div>
+        {list.map(item => <ExerciseByCat item={item} />)}
+      </div> :
+        <div><h2 className='title'>C A T E G O R I E S</h2>
       <Categories categories={categories}/>
+      </div>}
     </div>
+    
   )
 };
 //**********************reference this************ */

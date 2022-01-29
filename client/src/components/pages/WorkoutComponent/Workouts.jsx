@@ -6,8 +6,20 @@ import axios from 'axios';
 
 //ths function will make an axios request to retrieve a list of 200 workouts to choose from. Mapping thru that list and creating a WorkoutComponent for each
 const Workouts = () => {
+  
   const [list, setList] = useState([])
   const [input, setInput] = useState('');
+
+
+  useEffect(() => {
+    console.log('fuck');
+    axios.get('https://wger.de/api/v2/exercise/?language=2&limit=100')
+      .then(({ data }) => {
+        const { results } = data;
+        console.log(results);
+        setList(results);
+      })
+  }, []);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -15,26 +27,18 @@ const Workouts = () => {
 
   };
 
-  const workoutList = () => {
-    axios.get('/api/router/searchWorkouts')
-      .then(({ data }) => {
-        setList(data);
-      })
-  }
-
-  useEffect(() => {
-    workoutList();
-  }, [])
 
   const searchWorkouts = () => {
-    console.log('clicked');
-    axios.get('/api/router/searchWorkouts')
+    //console.log('clicked');
+    axios.get('https://wger.de/api/v2/exercise/?language=2&limit=100')
       .then(({ data }) => {
-        let filteredExercises = data.filter((obj) => {
+        //console.log(data);
+        const { results } = data;
+        let filteredExercises = results.filter((obj) => {
           return obj.name.toUpperCase().includes(input.toUpperCase())
         })
         setList(filteredExercises);
-
+        console.log(list);
       })
 
   }
@@ -52,7 +56,7 @@ const Workouts = () => {
             <Button
               variant="outline-info"
               id="workout-search-button"
-              onClick={searchWorkouts}>
+              onClick={() => searchWorkouts()}>
               Search
             </Button>
           </InputGroup>
