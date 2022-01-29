@@ -52,7 +52,7 @@ authRouter.get(
   (req, res) => {
     // save cookie, create a session, add user to db
     // Successful authentication, redirect home.
-    res.redirect('/');
+    res.redirect('/').send('welcome');
   },
 );
 
