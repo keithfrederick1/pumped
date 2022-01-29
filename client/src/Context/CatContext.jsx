@@ -8,7 +8,7 @@ const CatContextProvider = ({ children }) => {
 
   const browseClick = (id) => {
     //console.log(id);
-     axios.get(`https://wger.de/api/v2/exercise/?language=2&?category=${id}`)
+     axios.get(`https://wger.de/api/v2/exercise/?language=2&?category=${id}&limit=100`)
       .then(({ data }) => {
         const { results } = data;
         let filteredExercises = results.filter((obj) => obj.category === id);
