@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const axios = require('axios');
 const { signup, login, deleteUser } = require('./user');
-const { getWorkoutPlan, createWorkoutPlan } = require('./workoutPlan');
+const { getWorkoutPlan, createWorkoutPlan, addToWorkoutPlan } = require('./workoutPlan');
 const { addWorkout } = require('./workout');
 const { addToUserLog } = require('./userLog');
 
@@ -15,6 +15,11 @@ const pumpedRouter = Router();
 
 // pumpedRouter.get('/login', login);
 //---------------
+/* I want to add a workout to a workout plan, but how can I add
+a workout to workouts table while also adding the associative ids
+so that the workout belongs to the selected plan? */
+pumpedRouter.put('addToWorkoutPlan', addToWorkoutPlan);
+
 pumpedRouter.post('/createWorkoutPlan', createWorkoutPlan);
 
 pumpedRouter.get('/workoutPlan', getWorkoutPlan);
@@ -36,7 +41,5 @@ pumpedRouter.get('/searchWorkouts', async (req, res) => {
   console.log(result.data.results);
   res.send(result.data.results);
 });
-
-
 
 module.exports = { pumpedRouter };
