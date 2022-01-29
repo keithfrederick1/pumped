@@ -1,8 +1,8 @@
+require('dotenv').config();
 const path = require('path');
 const http = require('http');
 const express = require('express');
 const app = require('./app');
-const db = require('./db/index');
 
 const PORT = 3000;
 
@@ -25,4 +25,3 @@ app.get('/*', (req, res) => {
 server.listen(PORT, () => {
   console.log(`listening on http://127.0.0.1:${PORT}`);
 });
-
