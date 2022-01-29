@@ -6,29 +6,29 @@ import { useState } from 'react';
 
 
 const CategoryCard = ({ category })  => {
-  
+    const { id } = category;
     const [list, setList] =  useState([]);
-
 //console.log(category.id);
 
 //on click of browse category, an axios get request should be made to the backend with the category id as a parameter
 
    const handleClick = () => {
-     let { id } = category;
+     
 
-    axios.get('/api/router/workoutsByCategory')
+    axios.get(`https://wger.de/api/v2/exercise/?category=${id}`)
       .then(({ data: { results } }) => {
         
         let filteredExercises = results.filter((obj) => obj.category === id);
         //once we have filtered array, set state of list  to workouts from that category
         setList(filteredExercises);
+       
       })
       .catch((err) =>  {
         console.log(err);
       })
       
    }
-   
+   console.log(list);
 
 
   return (
