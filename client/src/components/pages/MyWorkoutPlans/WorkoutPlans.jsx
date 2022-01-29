@@ -1,4 +1,6 @@
 import React from 'react'
+import axios from 'axios'
+import { useState } from 'react'
 import { Form, Button } from 'react-bootstrap';
 
 
@@ -9,23 +11,39 @@ import { Form, Button } from 'react-bootstrap';
 
 //each plan list item should have a see more button that renders a WorkoutPLAN component for each of the workouts in a given plan
 const WorkoutPlans = () => {
+
+  const [plan, setPlan] = useState('')
+
+  const handleChange = (e) => {
+
+    setPlan(e.target.value);
+    console.log(plan);
+  }
+
+  const submitWorkoutPlan = (name) => { 
+    const planToSubmit = { name };
+    return axios.post('/api/router/createWorkoutPlan', planToSubmit).then(() => {
+      console.log('successful submit', 26)
+      setPlan('');
+    }).catch((err) => {
+      console.warn(err);
+    })
+  }
+  
+
   return (
     <div>
      <h2>Make Your Own Workout Plan</h2>
       <Form>
   <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-    <Form.Label>Exercise Name</Form.Label>
-    <Form.Control type="email" placeholder="go crazy" />
+    <Form.Label>Workout Plan Name</Form.Label>
+    <Form.Control type="email" placeholder="go crazy" onChange={handleChange} value={plan}/>
   </Form.Group>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-        <Form.Label>Description</Form.Label>
-        <Form.Control as="textarea" rows={3} />
-      </Form.Group>
     </Form>
-  <Button onClick={handleClick}>Submit</Button>
-
+  <Button onClick={() => {submitWorkoutPlan(plan)}}>Submit</Button>
     </div>
   )
 }
+
 
 export default WorkoutPlans
