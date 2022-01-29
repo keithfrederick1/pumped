@@ -9,7 +9,7 @@ const app = express();
 // use api/router as the base route
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/api/auth', authRouter);
+app.use('', authRouter);
 
 app.use('/api/router', pumpedRouter);
 

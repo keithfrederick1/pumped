@@ -37,4 +37,6 @@ pumpedRouter.get('/searchWorkouts', async (req, res) => {
   res.send(result.data.results);
 });
 
+
+
 module.exports = { pumpedRouter };
