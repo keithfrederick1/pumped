@@ -8,7 +8,7 @@ import { CatContext } from '../../Context/CatContext.jsx'
 const CategoryCard = ({ category })  => {
     const { id } = category;
     const { browseClick } = useContext(CatContext);
-//console.log(category.id);
+//(category.id);
 
 //on click of browse category, an axios get request should be made to the backend with the category id as a parameter
 

@@ -48,6 +48,9 @@ const AppNavbar = () => {
               </Nav.Link>
               </NavDropdown.Item>
           </NavDropdown>
+          <Nav.Link>
+          <Link to="/signin" style={{ textDecoration: 'none' }}>Signin</Link>
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Container>
