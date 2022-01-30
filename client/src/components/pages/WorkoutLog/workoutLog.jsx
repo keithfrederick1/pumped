@@ -21,7 +21,9 @@ const WorkoutLog = () => {
   //handle submit
   const handleSubmit = () => {
     //send post request with user id to users workout logs
-    axios.post(`/api/router/addToUserLog/:${username}`, newlog)
+    let text = newLog;
+    const userAndLog = { username, text}
+    return axios.post('/api/router/addToUserLog', userAndLog)
       .then((newLog) => {
         //update userLogs on screen to show it was added
         setUserLogs(userLogs => [...userLogs, newLog]);
@@ -55,7 +57,7 @@ const WorkoutLog = () => {
             <FormControl id="inlineFormInputGroup" placeholder="Describe Your Experience" value={newLog} onChange={handleChange} />
           </InputGroup>
           <Col xs="auto">
-            <Button type="submit" className="mb-2" onClick={() => handleSubmit()}>
+            <Button type="submit" className="mb-2" onClick={handleSubmit}>
               Submit
             </Button>
           </Col>
