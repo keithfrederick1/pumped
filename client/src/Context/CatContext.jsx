@@ -5,6 +5,8 @@ const CatContext = React.createContext();
 const CatContextProvider = ({ children }) => {
   const [list, setList] =  useState([]);
   const [click, setClick] = useState(false);
+  const [user, setUser] = useState('');
+  const [password, setPassword] = useState('');
 
   const browseClick = (id) => {
     //console.log(id);
@@ -25,6 +27,10 @@ const CatContextProvider = ({ children }) => {
    };
 
    const catProps = {
+     user,
+     setUser,
+     password,
+     setPassword,
      click,
      setClick,
      list, 
