@@ -24,7 +24,7 @@ const User = db.define(
     },
     googleId: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
   },
   {
