@@ -9,7 +9,6 @@ const CatContextProvider = ({ children }) => {
   const [password, setPassword] = useState('');
 
   const browseClick = (id) => {
-    //console.log(id);
      axios.get(`https://wger.de/api/v2/exercise/?language=2&?category=${id}&limit=100`)
       .then(({ data }) => {
         const { results } = data;
@@ -17,7 +16,6 @@ const CatContextProvider = ({ children }) => {
         //once we have filtered array, set state of list  to workouts from that category
         setList(filteredExercises);
         setClick(true);
-        //console.log(filteredExercises);
       })
       .catch((err) =>  {
         console.log(err);
