@@ -20,10 +20,9 @@ const WorkoutPlans = () => {
     console.log(plan);
   }
 
-  const submitWorkoutPlan = (planName) => { 
-    const planToSubmit = { planName };
+  const submitWorkoutPlan = (name) => { 
+    const planToSubmit = { name };
     return axios.post('/api/router/createWorkoutPlan', planToSubmit).then(() => {
-      console.log('successful submit', 26)
       setPlan('');
     }).catch((err) => {
       console.warn(err);
