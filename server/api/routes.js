@@ -11,7 +11,7 @@ const pumpedRouter = Router();
  in the db. */
 
 // --------change these------
-// pumpedRouter.post('/signup', signup);
+pumpedRouter.post('/signup', signup);
 
 // pumpedRouter.get('/login', login);
 //---------------

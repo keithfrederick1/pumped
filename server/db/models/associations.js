@@ -2,9 +2,9 @@
 can avoid circular dependencies. */
 const { DataTypes } = require('sequelize');
 const db = require('../index');
-let WorkoutPlan = require('./workoutPlan');
+const WorkoutPlan = require('./workoutPlan');
 const User = require('./user');
-let Workout = require('./workout');
+const Workout = require('./workout');
 const UserLog = require('./userLog');
 const Calendar = require('./calendar');
 /* A user has a 7 day workout calendar. A workout calendar has up to 7
@@ -42,16 +42,16 @@ const WorkoutPlansAndWorkouts = db.define(
   },
 );
 
-const test = () => WorkoutPlan.findOne({ where: { planName: 'rowing' } })
-  .then((data) => {
-    WorkoutPlan = data;
-    return Workout.findAll();
-  }).then((data) => {
-    Workout = data;
-    WorkoutPlan.addWorkouts(Workout);
-  }).catch((err) => console.error(err));
+// const test = () => WorkoutPlan.findOne({ where: { planName: 'get shredded' } })
+//   .then((data) => {
+//     WorkoutPlan = data;
+//     return Workout.findAll();
+//   }).then((data) => {
+//     Workout = data;
+//     return WorkoutPlan.addWorkouts(Workout);
+//   }).catch((err) => console.error(err));
 
-console.log(test(), 54);
+// console.log(test(), 54);
 
 // A WorkoutPlan belongs to a User and has many Workouts.
 WorkoutPlan.belongsTo(User);

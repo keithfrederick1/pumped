@@ -12,22 +12,22 @@ const addWorkout = (req, res) => {
 };
 
 // Workout.create({
-//   name: 'incline bench press',
+//   workoutName: 'incline bench press',
 //   description: 'Lean back and enjoy the burn.',
 // }).then(() => {}).catch((err) => { console.error(err); });
 
 // Workout.create({
-//   name: 'arm curls',
+//   workoutName: 'arm curls',
 //   description: 'pump up those mosquito bites you call biceps',
 // }).then(() => {}).catch((err) => { console.error(err); });
 
 // Workout.create({
-//   name: '5 mile jog',
+//   workoutName: '5 mile jog',
 //   description: '5 mile jog while listening to music',
 // }).then(() => {}).catch((err) => { console.error(err); });
 
 // Workout.create({
-//   name: 'lunges',
+//   workoutName: 'lunges',
 //   description: 'Lunges activate everything.',
 // }).then(() => {}).catch((err) => { console.error(err); });
 
