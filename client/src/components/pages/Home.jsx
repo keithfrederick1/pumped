@@ -20,8 +20,6 @@ const Home = () => {
       .then(({ data }) => {
         //the array of category objects is recognized as data.data.results, so I descructured data from response
 
-        //console.log(data.results);
-
         // use the response to set state of categories and pass down to categories component
        
         setCategories(data.results);
@@ -31,7 +29,6 @@ const Home = () => {
         console.error(err);
       });
     }, []);
-  console.log(list);
 
   return (
     
