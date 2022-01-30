@@ -8,8 +8,6 @@ import Profile from './pages/Profile/Profile.jsx';
 import WorkoutPlans from './pages/MyWorkoutPlans/WorkoutPlans.jsx';
 import Workouts from './pages/WorkoutComponent/Workouts.jsx';
 import Calendar from './pages/Calendar/Calendar.jsx';
-import LoginSignUp from './pages/Login/Signup.jsx/LoginSignUp.jsx';
-import CreateWorkout from './pages/CreateWorkout/CreateWorkout.jsx';
 import Signin from './pages/Profile/Signin.jsx';
 
 const App = () => (
@@ -17,7 +15,6 @@ const App = () => (
     <h1>P U M P</h1>
     <AppNavbar />
        <Routes>
-          <Route path='/login' element={<LoginSignUp />}/>
           {/* // trying to redirect no route to home route */}
           <Route path='/' element={<Navigate to='/home'/>}/>
           <Route path='/home' element={<Home />}/>
@@ -26,7 +23,6 @@ const App = () => (
           <Route path='/workout-log' element={<WorkoutLog />}/>
           <Route path='/calendar' element={<Calendar />}/>
           <Route path='/workouts' element={<Workouts />}/> 
-          <Route path='/create-workout' element={<CreateWorkout />}/> 
           <Route path='/signin' element={<Signin />}/>
         </Routes>
     </div>

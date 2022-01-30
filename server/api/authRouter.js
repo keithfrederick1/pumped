@@ -11,6 +11,8 @@ const authRouter = Router();
 
 passport.serializeUser((user, done) => {
   console.log(user[0].dataValues._id);
+  //call google token function on google id 
+  //call done 
   done(null, user[0].dataValues.googleId);
 });
 
@@ -18,7 +20,7 @@ passport.deserializeUser((googleId, done) => {
   console.log(googleId);
   User.findOne({ where: { googleId } })
     .then((user) => {
-      console.log('success');
+      console.log(user);
       done(null, user);
     })
     .catch((err) => console.error(err));
@@ -30,7 +32,7 @@ passport.use(new GoogleStrategy({
   callbackURL: CALLBACK_URL,
 }, (accessToken, refreshToken, profile, done) => {
   // use profile id to check if user is registered in db
-  User.findOrCreate({
+  const newUser = User.findOrCreate({
     where:
       {
         googleId: profile.id,
@@ -41,9 +43,9 @@ passport.use(new GoogleStrategy({
 }));
 // this takes users id to ensure cookie is small and passes it to session
 
-authRouter.get(
-  '/google',
-  passport.authenticate('google', { scope: ['profile', 'email'] }),
+
+authRouter.get('/google',
+  passport.authenticate('google', { scope: ['profile', 'email'] })
 );
 
 authRouter.get(
@@ -52,7 +54,7 @@ authRouter.get(
   (req, res) => {
     // save cookie, create a session, add user to db
     // Successful authentication, redirect home.
-    res.redirect('/').send('welcome');
+    res.redirect('/');
   },
 );
 

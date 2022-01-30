@@ -3,6 +3,8 @@ import { Table, Button } from 'react-bootstrap';
 
 //when user clicks profile on home page they should be redirected to a profile page that has a card with their username, created workouts, and workout plans
 function Profile() {
+
+
   return (
     <div>
       <h2>User Profile</h2>
@@ -17,7 +19,7 @@ function Profile() {
   </thead>
   <tbody>
     <tr>
-      <td>Keith</td>
+  <td>UserName</td>
       <td>Example</td>
       <td>Punisher</td>
       <td>today sucked</td>

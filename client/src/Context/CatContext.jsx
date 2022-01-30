@@ -5,7 +5,12 @@ const CatContext = React.createContext();
 const CatContextProvider = ({ children }) => {
   const [list, setList] =  useState([]);
   const [click, setClick] = useState(false);
-
+  const [user, setUser] = useState('');
+  const [password, setPassword] = useState('');
+  const [workoutPlans, setWorkoutPlans] = useState([]);
+  const [calendar, setCalendar] = useState({});
+  const [userLog, setUserLog] = useState('');
+ 
   const browseClick = (id) => {
     //console.log(id);
      axios.get(`https://wger.de/api/v2/exercise/?language=2&?category=${id}&limit=100`)
@@ -25,6 +30,14 @@ const CatContextProvider = ({ children }) => {
    };
 
    const catProps = {
+     workoutPlans,
+     calendar,
+     userLog,
+     user,
+     password,
+     setPassword,
+     user,
+     setUser,
      click,
      setClick,
      list, 
