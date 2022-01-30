@@ -12,13 +12,14 @@ const WorkoutComponent = (props) => {
    //use hooks for state management, take the props you need for workout name, description and an input are for intensity
 
   //create a context file to render the data  
-  const plans = ['kangaroo', 'nah thats my buttocks', 'I am perkisizing'];
+  const [plans, setPlan] = useState(['bursts', 'calisthenics', 'deadlifts'])
+
   const [show, setShow] = useState(false);
   
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const addWorkoutToPlan = () => {
-    console.log('this is fine....')
+    return axios()
   }
 
   return (
@@ -29,12 +30,11 @@ const WorkoutComponent = (props) => {
           borderRadius: '30px'
         }
       } alt="logo"/>
-      <div className="card-button"> 
+      <div className="card-button">
       <Button variant="info" onClick={handleShow}>
           See More
         </Button>
       </div>
-  
         <Modal
         show={show} onHide={handleClose}>
           <Modal.Header closeButton>
@@ -47,7 +47,7 @@ const WorkoutComponent = (props) => {
             </Button>
             <DropdownButton variant="outline-info" title="Add to Workout Plan">
               {plans.map((plan, i) => {
-                <Dropdown.Item onClick={addWorkoutToPlan} key={plan + i}>{plan.name}</Dropdown.Item>
+                return <Dropdown.Item onClick={addWorkoutToPlan} key={plan + i}>{plan}</Dropdown.Item>
               })}
             </DropdownButton>
           </Modal.Footer>

@@ -21,6 +21,14 @@ const createWorkoutPlan = (req, res) => {
     });
 };
 
+const addToWorkoutPlan = (req, res) => {
+  console.log(req.body).then(() => {
+
+  }).catch((err) => {
+    console.error(err);
+  });
+};
+
 module.exports = {
-  getWorkoutPlan, createWorkoutPlan,
+  getWorkoutPlan, createWorkoutPlan, addToWorkoutPlan,
 };

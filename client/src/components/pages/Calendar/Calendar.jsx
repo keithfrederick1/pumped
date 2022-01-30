@@ -47,7 +47,9 @@ const Calendar = () => {
         <td>
           <DropdownButton id="dropdown-basic-button" title="Dropdown button" size="sm" variant="info"
           title="Workout Plan" key={day + i}>
-          {dropdownOptions.map((option) => <Dropdown.Item onClick={() => handleDropdownItemClick(option.plan, day)} key={option.id}>{option.plan}</Dropdown.Item>)}
+          {dropdownOptions.map((option) =>
+          <Dropdown.Item onClick={() => handleDropdownItemClick(option.plan, day)}
+          key={option.id}>{option.plan}</Dropdown.Item>)}
           </DropdownButton>
         </td>
       )
