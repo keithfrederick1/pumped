@@ -21,7 +21,7 @@ const WorkoutLog = () => {
   //handle submit
   const handleSubmit = () => {
     //send post request with user id to users workout logs
-    axios.post(`/api/router/addToUserLog/:${username}`, newlog)
+    axios.post(`/api/router/addToUserLog/:${username}`, newLog)
       .then((newLog) => {
         //update userLogs on screen to show it was added
         setUserLogs(userLogs => [...userLogs, newLog]);

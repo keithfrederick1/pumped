@@ -5,24 +5,14 @@ const WorkoutPlan = db.define(
   'WorkoutPlan',
   {
     // Model attributes are defined here.
-    planName: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
   },
   {
-    timestamps: false,
+    // Other model options go here if needed.
   },
 );
-
-// Sync all models that are not
-// already in the database.
-// WorkoutPlan.sync({ alter: true })
-//   .then(() => {
-//     console.log('WorkoutPlan table synced');
-//   })
-//   .catch((err) => {
-//     console.error(err);
-//   });
 
 module.exports = WorkoutPlan;
