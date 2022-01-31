@@ -17,9 +17,13 @@ const Calendar = () => {
 
   const dropdownOptions = [
     {id: 0, plan: defaultPlan},
-    {id: 1, plan: 'I AM SPARTA'},
-    {id: 2, plan: 'Leg day'},
-    {id: 3, plan: 'Core day'},
+    {id: 1, plan: 'Abs'},
+    {id: 2, plan: 'Arms'},
+    {id: 3, plan: 'Back'},
+    {id: 4, plan: 'calves'},
+    {id: 5, plan: 'Chest'},
+    {id: 6, plan: 'Legs'},
+    {id: 7, plan: 'Shoulders'},
   ]
   // Use state hook to set the workout plan to an element.
   const [workoutPlans, setWorkoutPlans] = useState({...initialState});
