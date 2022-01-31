@@ -5,9 +5,10 @@ const CatContext = React.createContext();
 const CatContextProvider = ({ children }) => {
   const [list, setList] =  useState([]);
   const [click, setClick] = useState(false);
+  const [user, setUser] = useState('');
+  const [password, setPassword] = useState('');
 
   const browseClick = (id) => {
-    //console.log(id);
      axios.get(`https://wger.de/api/v2/exercise/?language=2&?category=${id}&limit=100`)
       .then(({ data }) => {
         const { results } = data;
@@ -15,7 +16,6 @@ const CatContextProvider = ({ children }) => {
         //once we have filtered array, set state of list  to workouts from that category
         setList(filteredExercises);
         setClick(true);
-        //console.log(filteredExercises);
       })
       .catch((err) =>  {
         console.log(err);
@@ -25,6 +25,10 @@ const CatContextProvider = ({ children }) => {
    };
 
    const catProps = {
+     user,
+     setUser,
+     password,
+     setPassword,
      click,
      setClick,
      list, 

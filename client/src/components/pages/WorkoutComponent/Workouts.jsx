@@ -27,7 +27,6 @@ const Workouts = () => {
 
 
   const searchWorkouts = () => {
-    //console.log('clicked');
     axios.get('https://wger.de/api/v2/exercise/?language=2&limit=100')
       .then(({ data }) => {
         const { results } = data;
